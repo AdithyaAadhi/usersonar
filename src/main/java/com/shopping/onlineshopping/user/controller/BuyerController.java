@@ -121,22 +121,22 @@ public class BuyerController {
 //	}
 
 	// Add product to wishlist
-	@PostMapping(value = "/api/wishlist/add", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> saveWishlist(@RequestBody WishlistDTO wishlistDTO) throws Exception {
+//	@PostMapping(value = "/api/wishlist/add", consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<String> saveWishlist(@RequestBody WishlistDTO wishlistDTO) throws Exception {
 
-		logger.info("Creation request for customer {} with data {}", wishlistDTO);
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("prodid", wishlistDTO.getProdid().getProdid());
+//		logger.info("Creation request for customer {} with data {}", wishlistDTO);
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("prodid", wishlistDTO.getProdid().getProdid());
 		// map.put("buyerid",wishlistDTO.getBuyerid());
-		System.out.println("adding map" + map);
-		ProductDTO projectDTOs = restTemplate.getForObject("http://localhost:8100/api/verifyprod/{prodid}",
-				ProductDTO.class, map);
-		System.out.println("adding wishlist" + projectDTOs);
-		buyerservice.createWishlist(wishlistDTO);
-		String successMessage = environment.getProperty("API.WISHLIST_SUCCESS");
-		return new ResponseEntity<>(successMessage, HttpStatus.OK);
+//		System.out.println("adding map" + map);
+//		ProductDTO projectDTOs = restTemplate.getForObject("http://localhost:8100/api/verifyprod/{prodid}",
+//				ProductDTO.class, map);
+//		System.out.println("adding wishlist" + projectDTOs);
+//		buyerservice.createWishlist(wishlistDTO);
+//		String successMessage = environment.getProperty("API.WISHLIST_SUCCESS");
+//		return new ResponseEntity<>(successMessage, HttpStatus.OK);
 
-	}
+//	}
 
 	// Delete product from wishlist
 	@DeleteMapping(value = "/wishlist/{buyerid}")
@@ -149,23 +149,23 @@ public class BuyerController {
 	}
 
 	// Add product to cart
-	@PostMapping(value = "/api/cart/add", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> saveCart(@RequestBody CartDTO cartDTO) throws Exception {
+//	@PostMapping(value = "/api/cart/add", consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<String> saveCart(@RequestBody CartDTO cartDTO) throws Exception {
 
-		logger.info("Creation request for customer {} with data {}", cartDTO);
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("buyerid", cartDTO.getBuyerid().getBuyerid());
-		map.put("prodid", cartDTO.getProdid().getProdid());
-		// map.put("buyerid",wishlistDTO.getBuyerid());
-		System.out.println("adding map" + map);
-		ProductDTO projectDTOs = restTemplate.getForObject("http://localhost:8100/api/verifyprod/{prodid}",
-				ProductDTO.class, map);
-		System.out.println("adding cart" + projectDTOs);
-		buyerservice.createCart(cartDTO);
-		String successMessage = environment.getProperty("API.CART_SUCCESS");
-		return new ResponseEntity<>(successMessage, HttpStatus.OK);
-
-	}
+//		logger.info("Creation request for customer {} with data {}", cartDTO);
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("buyerid", cartDTO.getBuyerid().getBuyerid());
+//		map.put("prodid", cartDTO.getProdid().getProdid());
+//		// map.put("buyerid",wishlistDTO.getBuyerid());
+//		System.out.println("adding map" + map);
+//		ProductDTO projectDTOs = restTemplate.getForObject("http://localhost:8100/api/verifyprod/{prodid}",
+//				ProductDTO.class, map);
+//		System.out.println("adding cart" + projectDTOs);
+//		buyerservice.createCart(cartDTO);
+//		String successMessage = environment.getProperty("API.CART_SUCCESS");
+//		return new ResponseEntity<>(successMessage, HttpStatus.OK);
+//
+//	}
 
 	// Delete product from cart
 	@DeleteMapping(value = "/api/cart/{buyerid}")
