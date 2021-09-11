@@ -86,13 +86,13 @@ public class SellerController {
 	}
 
 	// Get products of seller
-	@GetMapping(value = "/api/sellers/products/{sellerid}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<ProductDTO>> getProductsOfSeller(@PathVariable String sellerid) throws Exception {
+//	@GetMapping(value = "/api/sellers/products/{sellerid}", produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<List<ProductDTO>> getProductsOfSeller(@PathVariable String sellerid) throws Exception {
 
-		@SuppressWarnings("unchecked")
-		List<ProductDTO> productDTO = new RestTemplate().getForObject("http://localhost:8100/apis/products/" + sellerid,
-				List.class);
-		return new ResponseEntity<>(productDTO, HttpStatus.OK);
+//		@SuppressWarnings("unchecked")
+//		List<ProductDTO> productDTO = new RestTemplate().getForObject("http://localhost:8100/apis/products/" + sellerid,
+//				List.class);
+//		return new ResponseEntity<>(productDTO, HttpStatus.OK);
 
-	}
+//	}
 }
